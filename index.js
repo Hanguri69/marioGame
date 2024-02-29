@@ -47,7 +47,7 @@ class Platform{
         }
         this.image = image
         this.width = image.width
-        this.height = image.height
+        this.height = image.height 
         
     }
     draw(){
@@ -72,16 +72,16 @@ const keys = {
         pressed: false
     }
 }
-
+let hangol = 0
 let scrollOffset = 0
 
 function animate(){
     requestAnimationFrame(animate)
     c.clearRect(0,0,canvas.width,canvas.height)
-    player.update()
     platforms.forEach(platform =>{
         platform.draw()
     })
+    player.update()
     
     if(keys.right.pressed && player.position.x<400)
     {
